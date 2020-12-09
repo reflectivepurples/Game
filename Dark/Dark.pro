@@ -10,10 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    map.cpp \
+    player.cpp
 
 HEADERS += \
-    mainwindow.h
+    dynamic.h \
+    mainwindow.h \
+    map.h \
+    player.h
 
 FORMS += \
     mainwindow.ui
@@ -22,3 +27,5 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES = Resources.qrc

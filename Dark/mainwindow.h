@@ -19,13 +19,22 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void getPlayer(Player* player);
     void drawMap(Map map, int pos);
     void drawPlayer();
-
+    void clear();
+signals:
+    void playerMoveUp();
+    void playerMoveDown();
+    void playerMoveLeft();
+    void playerMoveRight();
+private slots:
+    void keyPressEvent(QKeyEvent *event);
 private:
     Ui::MainWindow *ui;
     QGraphicsScene* mapScene_;
     Player* player_;
+    bool gameStarted_ = true;
 
 };
 #endif // MAINWINDOW_H
